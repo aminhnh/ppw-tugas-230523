@@ -23,8 +23,11 @@ function isiData() {
     let nama = prompt("Nama : ", "Aminah Nurul Huda");
     let nim = prompt("NIM : ", "22/499994/AM/30155");
     let angkatan = Number(prompt("Angkatan : ", "22"));
+    //
+    no2.innerHTML = ``;
   } else {
     no2.innerHTML = `<p>Anda bukan praktikan PPW1, anda tidak boleh
-    masuk</p>`;
+    masuk!</p>`;
   }
 }
+function tambahData() {}
