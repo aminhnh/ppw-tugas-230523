@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Kalkulator Plastik</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>DAY</th>
+            <th>YEAR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plastic Bottles</td>
+            <td>
+              <input
+                class="count"
+                name="p-bottles"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="p-bottles"></td>
+          </tr>
+          <tr>
+            <td>Plastic Cups</td>
+            <td>
+              <input
+                class="count"
+                name="p-cups"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="p-cups"></td>
+          </tr>
+          <tr>
+            <td>Straws</td>
+            <td>
+              <input
+                class="count"
+                name="straws"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="straws"></td>
+          </tr>
+          <tr>
+            <td>Cotton Swabs</td>
+            <td>
+              <input
+                class="count"
+                name="c-swabs"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="c-swabs"></td>
+          </tr>
+          <tr>
+            <td>Cigarette Butts</td>
+            <td>
+              <input
+                class="count"
+                name="c-butts"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="c-butts"></td>
+          </tr>
+          <tr>
+            <td>Plastic Resealable Bags</td>
+            <td>
+              <input
+                class="count"
+                name="p-bags"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="p-bags"></td>
+          </tr>
+          <tr>
+            <td>Plastic Cling Wrap</td>
+            <td>
+              <input
+                class="count"
+                name="p-wrap"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="p-wrap"></td>
+          </tr>
+          <tr>
+            <td>Plastic Silverware</td>
+            <td>
+              <input
+                class="count"
+                name="p-silverware"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="p-silverware"></td>
+          </tr>
+          <tr>
+            <td>Plastic Stirrers</td>
+            <td>
+              <input
+                class="count"
+                name="p-stirrers"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="p-stirrers"></td>
+          </tr>
+          <tr>
+            <td>Food Containers</td>
+            <td>
+              <input
+                class="count"
+                name="f-containers"
+                type="number"
+                onkeyup="calculate(this)"
+              />
+            </td>
+            <td id="f-containers"></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Current Yearly Consumption : <b id="yearly-sum"></b></p>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function calculate(input) {
+        var elementValue = Number(input.value);
+        var elementClass = input.name;
+        var tulisan = document.getElementById(elementClass);
+        tulisan.innerHTML = elementValue * 365;
+        calculateYearly();
+      }
+      function calculateYearly() {
+        var items = document.getElementsByClassName("count");
+        var count = 0;
+        var totalCount = 0;
+        for (var i = 0; i < items.length; i++) {
+          var item = items.item(i);
+          if (item.value) {
+            totalCount += Number(item.value);
+          }
+        }
+
+        var yearly = document.getElementById("yearly-sum");
+        yearly.innerHTML = totalCount * 365;
+      }
+    </script>
+  </body>
+</html>
