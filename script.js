@@ -18,15 +18,22 @@ function isiData() {
   let isPraktikan = confirm(
     "Apakah anda praktikan mata kuliah Praktikum Pemrograman Web 1?"
   );
-  let no2 = document.getElementById("no-2");
   if (isPraktikan) {
+    let tbody = document.getElementById("tbody");
     let nama = prompt("Nama : ", "Aminah Nurul Huda");
-    let nim = prompt("NIM : ", "22/499994/AM/30155");
+    let nim = prompt("NIM : ", "22/499994/TK/94449");
     let angkatan = Number(prompt("Angkatan : ", "22"));
-    //
-    no2.innerHTML = ``;
+
+    tbody.innerHTML =
+      tbody.innerHTML +
+      `<tr>
+    <td>${nama}</td>
+    <td>${nim}</td>
+    <td>${angkatan}</td>
+  </tr>`;
   } else {
-    no2.innerHTML = `<p>Anda bukan praktikan PPW1, anda tidak boleh
+    let msg = document.getElementById("error-msg");
+    msg.innerHTML = `<p>Anda bukan praktikan PPW1, anda tidak boleh
     masuk!</p>`;
   }
 }
